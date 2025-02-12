@@ -1,11 +1,13 @@
 package BT_12;
 
+import java.beans.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Main {
-	public static void main(String[] args) {
+
+	public static void main(String[] args)  {
 		List<Student> students = new ArrayList<Student>();
 		students.add(new Student("Trinh Quang Lam",9));
 		students.add(new Student("Nguyen Hoang Hiep",10));
@@ -18,7 +20,12 @@ public class Main {
 		for(Student student : students)
 			System.out.println(student.toString());
 		
+
+
+		
 	}
 }
+
+
 
 
