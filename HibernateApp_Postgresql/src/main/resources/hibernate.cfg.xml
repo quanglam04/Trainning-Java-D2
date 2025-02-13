@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+        <!-- Cấu hình kết nối PostgreSQL -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/ex_17</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">123456</property>
+
+        <!-- Hibernate Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Tự động cập nhật schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Hiển thị SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Khai báo Entity -->
+        
+                <!-- Khai báo Entity -->
+        <mapping class="Entity.Department"/>
+        <mapping class="Entity.Employee"/>
+        <mapping class="Entity.Permission"/>
+        <mapping class="Entity.Position"/>
+        <mapping class="Entity.Role"/>
+        <mapping class="Entity.User"/>
+
+        
+        
+    </session-factory>
+</hibernate-configuration>
