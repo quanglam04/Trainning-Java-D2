@@ -4,48 +4,43 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class QLCB {
-	private ArrayList<CanBo> listCanBo;
-	public QLCB() {
-		listCanBo = new ArrayList<CanBo>();
-	}
-	
-	// Phương thức thêm mới cán bộ
-	public void addCanBo(CanBo canBo) {
-		listCanBo.add(canBo);
-	}
-	
-	// Tìm kiếm cán bộ theo họ tên
-	public void searchByName(String name) {
-		for(CanBo canBo : listCanBo) {
-			if(canBo.getName().equals(name))
-			{
-				System.out.println(canBo.toString());
-				return;
-			}
-		}
-		System.out.println("Không tìm thấy");
-		return ;
-	}
-	
-	// Phương thức hiển thị danh sách cán bộ
-	public void showAll() {
-		for(CanBo canBo: listCanBo)
-			System.out.println(canBo.toString());
-	}
-	
-	// Xóa cán bộ theo họ tên
-	public void deleteByName(String name) {
-		for(CanBo canBo : listCanBo )
-			if(canBo.getName().equals(name))
-			{
-				listCanBo.remove(canBo);
-				return;
-			}
-		System.out.println("Không có cán bộ có tên "+name+" trong danh sách!");
-	}
-	
-	// Phương thức menu để thao tác
-	public void menu() {
+    private ArrayList<CanBo> listCanBo;
+
+    public QLCB() {
+        listCanBo = new ArrayList<CanBo>();
+    }
+
+    public void addCanBo(CanBo canBo) {
+        listCanBo.add(canBo);
+    }
+
+    public void searchByName(String name) {
+        for (CanBo canBo : listCanBo) {
+            if (canBo.getName().equals(name)) {
+                System.out.println(canBo.toString());
+                return;
+            }
+        }
+        System.out.println("Không tìm thấy");
+        return;
+    }
+
+    public void showAll() {
+        for (CanBo canBo : listCanBo)
+            System.out.println(canBo.toString());
+    }
+
+    public void deleteByName(String name) {
+        for (CanBo canBo : listCanBo)
+            if (canBo.getName().equals(name)) {
+                listCanBo.remove(canBo);
+                return;
+            }
+        System.out.println("Không có cán bộ có tên " + name + " trong danh sách!");
+    }
+
+    // Phương thức menu để thao tác
+    public void menu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("\n=== MENU ===");
@@ -60,23 +55,23 @@ public class QLCB {
 
             switch (choice) {
                 case 1:
- 
+
                     System.out.println("Nhập tên: ");
                     String name = scanner.nextLine();
                     System.out.println("Nhập tuổi: ");
                     int age = scanner.nextInt();
-                    scanner.nextLine(); 
+                    scanner.nextLine();
                     System.out.println("Nhập giới tính: ");
                     String gender = scanner.nextLine();
                     System.out.println("Nhập địa chỉ: ");
                     String address = scanner.nextLine();
-                    
+
                     System.out.println("Chọn loại cán bộ: ");
                     System.out.println("1. Công nhân");
                     System.out.println("2. Kỹ sư");
                     System.out.println("3. Nhân viên");
                     int type = scanner.nextInt();
-                    scanner.nextLine(); 
+                    scanner.nextLine();
 
                     if (type == 1) {
                         System.out.println("Nhập bậc công nhân (1-10): ");
@@ -96,7 +91,7 @@ public class QLCB {
                     break;
 
                 case 2:
-    
+
                     System.out.print("Nhập tên cán bộ cần tìm: ");
                     String searchName = scanner.nextLine();
                     searchByName(searchName);
@@ -107,7 +102,7 @@ public class QLCB {
                     break;
 
                 case 4:
-    
+
                     System.out.print("Nhập tên cán bộ cần xóa: ");
                     String deleteName = scanner.nextLine();
                     deleteByName(deleteName);
@@ -122,11 +117,10 @@ public class QLCB {
             }
         }
     }
-	
-	public static void main(String[] args) {
-		QLCB qlcb = new QLCB();
-		qlcb.menu();
-	}
-	
+
+    public static void main(String[] args) {
+        QLCB qlcb = new QLCB();
+        qlcb.menu();
+    }
 
 }
